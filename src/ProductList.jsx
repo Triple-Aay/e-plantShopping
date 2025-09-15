@@ -281,12 +281,11 @@ function ProductList({ onHomeClick }) {
   }, [cartItems]);
 
   const handleAddToCart = (product) => {
-    dispatch(addItem(product)); // Dispatch the action to add the product to the cart (Redux action)
+    dispatch(addItem(product));
 
     setAddedToCart((prevState) => ({
-      // Update the local state to reflect that the product has been added
-      ...prevState, // Spread the previous state to retain existing entries
-      [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
+      ...prevState,
+      [product.name]: true,
     }));
   };
 
@@ -301,13 +300,12 @@ function ProductList({ onHomeClick }) {
   };
   const handlePlantsClick = (e) => {
     e.preventDefault();
-    setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
-    setShowCart(false); // Hide the cart when navigating to About Us
+    setShowPlants(true);
+    setShowCart(false);
   };
 
   const handleContinueShopping = () => {
-    setShowCart(false); // ⬅️ this returns you to the Plants/grid
-    // (optional) scroll the grid into view for a nice UX:
+    setShowCart(false);
     requestAnimationFrame(() => {
       document
         .querySelector(".product-grid")
