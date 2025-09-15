@@ -49,7 +49,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleCheckout = () => {
-    setShowCheckout(true);
+    alert("Checkout will be implemented later. Stay tuned! 🧾");
   };
 
   return (
